@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "cypress": "^13.16.1",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.2"
+  },
+  "name": "rwe-task",
+  "version": "1.0.0",
+  "description": "Task for the interview",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliakseiBabko/RWE-task.git"
+  },
+  "keywords": [
+    "cypress",
+    "rwe"
+  ],
+  "author": "Aliaksei Babko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AliakseiBabko/RWE-task/issues"
+  },
+  "homepage": "https://github.com/AliakseiBabko/RWE-task#readme"
+}
