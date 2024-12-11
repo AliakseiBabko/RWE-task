@@ -35,7 +35,7 @@ Cypress.Commands.add('checkBrokenImages', () => {
     }
 
     // Assert that there are no broken images
-    expect(brokenImages, 'List of broken images').to.have.length(0);
+    expect(brokenImages, `List of broken images ${JSON.stringify(brokenImages)}`).to.have.length(0);
   });
 });
 
@@ -51,21 +51,18 @@ Cypress.Commands.add('loginWithGitHub', (email: string, password: string) => {
     'https://github.com',
     { args: { email, password } },
     ({ email, password }) => {
-      cy.get('input#login_field', { timeout: 10000 })
-        .should('be.visible')
-        .type(email, { log: false });
+      cy.get('input#login_field').should('be.visible').type(email, { log: false });
+      cy.get('input#password').should('be.visible').type(password, { log: false });
+      cy.get('input.js-sign-in-button').should('be.visible').click();
 
-      cy.get('input#password', { timeout: 10000 })
-        .should('be.visible')
-        .type(password, { log: false });
-
-      cy.get('input[type="submit"]', { timeout: 10000 })
-        .should('be.visible')
-        .click();
-
-      cy.contains('button', 'Authorize glitchdotcom', { timeout: 10000 })
-        .should('be.visible')
-        .click();
+      // Conditional click on the "Authorize" button if it exists
+      cy.get('body').then(($body) => {
+        if ($body.find('.js-oauth-authorize-btn').length > 0) {
+          cy.get('.js-oauth-authorize-btn')
+            .should('be.visible')
+            .click();
+        }
+      });
     }
   );
 });

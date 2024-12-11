@@ -16,7 +16,6 @@ class DynamicLoadingPage {
   }
 
   public checkDynamicLoading(scenarioSelector: string, expectedText: string): void {
-    // Assumes a custom command cy.checkDynamicLoading() is defined
     cy.checkDynamicLoading(scenarioSelector, expectedText);
   }
 }
