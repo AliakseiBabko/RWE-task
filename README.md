@@ -15,17 +15,9 @@
 
 ### Steps
 
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/AliakseiBabko/RWE-task.git
-   ```
+1. **Unzip the Project Files**
 
 2. **Navigate to the Project Directory**
-
-   ```bash
-   cd RWE-task
-   ```
 
 3. **Install Dependencies**
 
