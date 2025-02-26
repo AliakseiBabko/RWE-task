@@ -8,10 +8,4 @@ declare namespace Cypress {
     checkRedirectLink(linkText: string, redirectText: string): Chainable<void>;
     loginWithGitHub(email: string, password: string): Chainable<void>;
   }
-
-  interface Env {
-    googleUserEmail: string;
-    googleUserPassword: string;
-    googleUserName: string;
-  }
 }

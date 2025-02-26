@@ -1,5 +1,3 @@
-import { selectors } from './selectors';
-
 /**
  * Custom command to check for broken images on the page using soft assertions.
  * It iterates through all images, sends a request to each image URL,
